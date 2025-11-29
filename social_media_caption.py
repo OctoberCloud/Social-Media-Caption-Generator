@@ -9,7 +9,7 @@ desc = st.text_input("Product/Service Description")
 tone = st.selectbox("Tone", ["Witty", "Professional", "Casual", "Inspirational"])
 
 if st.button("Generate Captions"):
-    model = genai.GenerativeModel("gemini-pro")
+    model = genai.GenerativeModel("gemini-2.5-flash")
     prompt = f"Write 3 social media captions under 30 words, tone: {tone}, about: {desc}"
     response = model.generate_content(prompt)
     st.write(response.text)
